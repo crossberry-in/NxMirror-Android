@@ -34,8 +34,15 @@ jobs:
           distribution: temurin
           java-version: "17"
 
-      - name: Configure Android SDK
-        uses: android-actions/setup-android@v3
+      # The ubuntu-latest runner image ships a preinstalled Android SDK
+      # (ANDROID_HOME=/usr/local/lib/android/sdk, licenses pre-accepted).
+      # Gradle auto-installs any missing platform/build-tools packages.
+
+      - name: Show Android SDK environment
+        run: |
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          sdkmanager --version || true
+          ls "$ANDROID_HOME/platforms" 2>/dev/null || true
 
       - name: Install npm dependencies
         run: npm ci
