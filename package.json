@@ -1,0 +1,52 @@
+{
+  "name": "nxmirror-android",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NxMirror — native Android app (React Native + Expo) for the NxMirror package registry, cloud files, Git cloud and NxDB.",
+  "main": "expo-router/entry",
+  "scripts": {
+    "start": "expo start",
+    "typecheck": "tsc --noEmit",
+    "doctor": "expo-doctor",
+    "prebuild": "expo prebuild --platform android",
+    "android": "expo run:android",
+    "build:debug": "expo prebuild --platform android --no-install && cd android && ./gradlew assembleDebug",
+    "build:release": "expo prebuild --platform android --no-install && cd android && ./gradlew --no-daemon assembleRelease",
+    "ios": "expo run:ios"
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "2.1.2",
+    "@tanstack/react-query": "^5.108.2",
+    "expo": "^53.0.27",
+    "expo-blur": "~14.1.5",
+    "expo-clipboard": "~7.1.5",
+    "expo-constants": "~17.1.8",
+    "expo-document-picker": "~13.1.6",
+    "expo-file-system": "~18.1.11",
+    "expo-haptics": "~14.1.4",
+    "expo-image-picker": "~16.1.4",
+    "expo-linear-gradient": "~14.1.5",
+    "expo-linking": "~7.1.7",
+    "expo-network": "~7.1.5",
+    "expo-router": "~5.1.11",
+    "expo-secure-store": "~14.2.4",
+    "expo-sharing": "~13.1.5",
+    "expo-splash-screen": "~0.30.10",
+    "expo-status-bar": "~2.2.3",
+    "query-string": "^9.5.1",
+    "react": "^19.0.0",
+    "react-dom": "19.0.0",
+    "react-native": "0.79.6",
+    "react-native-gesture-handler": "~2.24.0",
+    "react-native-reanimated": "~3.17.4",
+    "react-native-safe-area-context": "5.4.0",
+    "react-native-screens": "~4.11.1",
+    "react-native-svg": "15.11.2",
+    "zustand": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "~19.0.10",
+    "babel-preset-expo": "~13.0.0",
+    "typescript": "~5.8.3"
+  }
+}
